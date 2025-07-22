@@ -1,0 +1,56 @@
+{
+  "manifest_version": 2,
+  "name": "DiscourseMap Plugin Detector",
+  "version": "1.0.0",
+  "description": "Discourse forum plugin and technology detection extension - Wappalyzer for Discourse",
+  
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus",
+    "notifications",
+    "<all_urls>"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "background": {
+    "scripts": ["background_firefox.js"],
+    "persistent": false
+  },
+  
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "DiscourseMap Plugin Detector",
+    "default_icon": {
+      "16": "icons/icon16.svg",
+      "32": "icons/icon32.svg",
+      "48": "icons/icon48.svg",
+      "128": "icons/icon128.svg"
+    }
+  },
+  
+  "icons": {
+    "16": "icons/icon16.svg",
+    "32": "icons/icon32.svg",
+    "48": "icons/icon48.svg",
+    "128": "icons/icon128.svg"
+  },
+  
+  "web_accessible_resources": [
+    "detector.js"
+  ],
+  
+  "applications": {
+    "gecko": {
+      "id": "discoursemap@ibrahmsql.github.io",
+      "strict_min_version": "57.0"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bgGradient128" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="iconGradient128" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8f9fa;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <circle cx="64" cy="64" r="60" fill="url(#bgGradient128)" stroke="#4a5568" stroke-width="2"/>
+  
+  <g transform="translate(64,64)">
+    <circle cx="0" cy="0" r="8" fill="url(#iconGradient128)" stroke="#2d3748" stroke-width="1.5"/>
+    
+    <g stroke="url(#iconGradient128)" stroke-width="3" fill="none">
+      <line x1="0" y1="-8" x2="0" y2="-25"/>
+      <circle cx="0" cy="-25" r="6" fill="url(#iconGradient128)" stroke="#2d3748" stroke-width="1.5"/>
+      
+      <line x1="5.7" y1="-5.7" x2="17.7" y2="-17.7"/>
+      <circle cx="17.7" cy="-17.7" r="5" fill="url(#iconGradient128)" stroke="#2d3748" stroke-width="1.5"/>
+      
+      <line x1="8" y1="0" x2="25" y2="0"/>
+      <circle cx="25" cy="0" r="6" fill="url(#iconGradient128)" stroke="#2d3748" stroke-width="1.5"/>
+      
+      <line x1="5.7" y1="5.7" x2="17.7" y2="17.7"/>
+      <circle cx="17.7" cy="17.7" r="5" fill="url(#iconGradient128)" stroke="#2d3748" stroke-width="1.5"/>
+      
+      <line x1="0" y1="8" x2="0" y2="25"/>
+      <circle cx="0" cy="25" r="6" fill="url(#iconGradient128)" stroke="#2d3748" stroke-width="1.5"/>
+      
+      <line x1="-5.7" y1="5.7" x2="-17.7" y2="17.7"/>
+      <circle cx="-17.7" cy="17.7" r="5" fill="url(#iconGradient128)" stroke="#2d3748" stroke-width="1.5"/>
+      
+      <line x1="-8" y1="0" x2="-25" y2="0"/>
+      <circle cx="-25" cy="0" r="6" fill="url(#iconGradient128)" stroke="#2d3748" stroke-width="1.5"/>
+      
+      <line x1="-5.7" y1="-5.7" x2="-17.7" y2="-17.7"/>
+      <circle cx="-17.7" cy="-17.7" r="5" fill="url(#iconGradient128)" stroke="#2d3748" stroke-width="1.5"/>
+    </g>
+    
+    <g transform="translate(15, -15)">
+      <path d="M0,-8 L6,-5 L6,5 L0,8 L-6,5 L-6,-5 Z" fill="#e53e3e" stroke="#c53030" stroke-width="1"/>
+      <text x="0" y="2" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">!</text>
+    </g>
+  </g>
+  
+  <text x="64" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">DM</text>
+</svg>
