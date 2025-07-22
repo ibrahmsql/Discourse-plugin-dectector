@@ -1,0 +1,132 @@
+{
+  "name": "discoursemap-plugin-detector",
+  "version": "1.0.0",
+  "description": "A comprehensive browser extension for detecting Discourse forum plugins, themes, and technology stack. Works like Wappalyzer but specifically designed for Discourse communities.",
+  "main": "content.js",
+  "scripts": {
+    "build": "echo 'Building extension...' && npm run validate",
+    "validate": "echo 'Validating manifests...' && node scripts/validate.js",
+    "test": "echo 'Running tests...' && node scripts/test.js",
+    "package": "echo 'Packaging extension...' && npm run build && node scripts/package.js",
+    "dev": "echo 'Development mode...' && npm run validate",
+    "lint": "echo 'Linting code...' && eslint *.js",
+    "format": "echo 'Formatting code...' && prettier --write *.js *.html *.css"
+  },
+  "keywords": [
+    "discourse",
+    "plugin",
+    "detection",
+    "security",
+    "browser-extension",
+    "wappalyzer",
+    "technology-detection",
+    "vulnerability-scanner",
+    "chrome-extension",
+    "firefox-addon"
+  ],
+  "author": {
+    "name": "DiscourseMap Team",
+    "email": "ibrahimsql@proton.me",
+    "url": "https://github.com/ibrahmsql/discoursemap"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibrahmsql/discoursemap.git",
+    "directory": "browser_extension"
+  },
+  "bugs": {
+    "url": "https://github.com/ibrahmsql/discoursemap/issues"
+  },
+  "homepage": "https://github.com/ibrahmsql/discoursemap#readme",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^2.0.0",
+    "web-ext": "^7.0.0",
+    "archiver": "^5.0.0",
+    "jsonschema": "^1.4.0"
+  },
+  "webExt": {
+    "sourceDir": ".",
+    "artifactsDir": "dist",
+    "ignoreFiles": [
+      "package.json",
+      "package-lock.json",
+      "node_modules",
+      "scripts",
+      "dist",
+      "*.md",
+      ".git*"
+    ]
+  },
+  "manifest": {
+    "chrome": "manifest.json",
+    "firefox": "manifest_firefox.json"
+  },
+  "permissions": {
+    "required": [
+      "activeTab",
+      "storage"
+    ],
+    "optional": [
+      "contextMenus",
+      "notifications",
+      "scripting"
+    ]
+  },
+  "browser_compatibility": {
+    "chrome": {
+      "minimum_version": "88",
+      "manifest_version": 3
+    },
+    "firefox": {
+      "minimum_version": "57",
+      "manifest_version": 2
+    },
+    "edge": {
+      "minimum_version": "88",
+      "manifest_version": 3
+    },
+    "opera": {
+      "minimum_version": "74",
+      "manifest_version": 3
+    }
+  },
+  "features": {
+    "plugin_detection": "50+ Discourse plugins with confidence scoring and categorization",
+    "technology_stack": "Comprehensive technology detection (Ruby, Rails, JavaScript libraries)",
+    "version_detection": "Discourse, Ruby, and framework version identification",
+    "auto_scan": "Automatic detection on page load",
+    "wappalyzer_style": "Clean, organized interface similar to popular web technology detectors"
+  },
+  "supported_discourse_versions": {
+    "minimum": "2.0.0",
+    "maximum": "3.x.x",
+    "tested_versions": [
+      "2.8.x",
+      "2.9.x",
+      "3.0.x",
+      "3.1.x"
+    ]
+  },
+  "security": {
+    "content_security_policy": "script-src 'self'; object-src 'none';",
+    "permissions_justification": {
+      "activeTab": "Required to analyze the current Discourse forum page for plugin detection",
+      "storage": "Used to cache plugin signatures and user preferences",
+      "contextMenus": "Optional: Provides right-click context menu for quick scanning",
+      "notifications": "Optional: Shows notifications when vulnerabilities are found",
+      "scripting": "Needed to inject detection scripts into forum pages for technology analysis"
+    }
+  },
+  "privacy": {
+    "data_collection": "No personal data collected. Only analyzes publicly available forum information for plugin and technology detection.",
+    "external_requests": "No external API calls. All analysis performed locally in the browser.",
+    "local_storage": "Stores only plugin signatures, technology patterns, and user preferences locally.",
+    "privacy_policy": "https://github.com/yourusername/discoursemap/blob/main/PRIVACY.md"
+  }
+}
