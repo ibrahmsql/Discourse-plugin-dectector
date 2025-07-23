@@ -5,7 +5,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/username/discourse-plugin-detector?style=social)](https://github.com/ibrahmsql/discourse-plugin-detector)
 [![License](https://img.shields.io/badge/license-Apache-green.svg)](LICENSE)
 
-**The most comprehensive Discourse plugin detection tool** - Instantly identify 40+ Discourse plugins, themes, and technology stack with advanced confidence scoring. Perfect for Discourse administrators, developers, security researchers, and forum analysts.
+**The most comprehensive Discourse plugin detection tool** - Instantly identify 40+ Discourse plugins, themes, and technology stack with confidence scoring. Perfect for Discourse administrators, developers, security researchers, and forum analysts.
 
 ## 🚀 **Why Choose Discourse Plugin Detector?**
 
@@ -14,7 +14,7 @@
 - **Real-time Analysis** - Instant results as you browse Discourse forums
 - **Zero Performance Impact** - Lightweight and optimized for speed
 
-### 🎯 **Advanced Features**
+### 🎯 **Features**
 - **🔬 Confidence Scoring System** - High/Medium/Low confidence levels for accurate detection
 - **📊 Technology Stack Analysis** - Identify Ember.js, jQuery, Bootstrap, PostgreSQL, Redis
 - **🏷️ Smart Categorization** - 16 categories: Content, Communication, Moderation, Security, etc.
@@ -96,7 +96,7 @@
 |---------|---------------------------|------------|----------|
 | Discourse-specific | ✅ **Specialized** | ❌ Generic | ❌ Generic |
 | Plugin Detection | ✅ **40+ plugins** | ❌ Limited | ❌ Basic |
-| Confidence Scoring | ✅ **Advanced** | ❌ No | ❌ No |
+| Confidence Scoring | ✅ **Yes** | ❌ No | ❌ No |
 | Real-time Analysis | ✅ **Instant** | ✅ Yes | ❌ Slow |
 | Free to Use | ✅ **100% Free** | ⚠️ Limited | ❌ Paid |
 

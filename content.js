@@ -919,12 +919,17 @@ class DiscoursePluginDetector {
 }
 
 // Load detector
-const script = document.createElement("script");
-script.src = chrome.runtime.getURL("detector.js");
-script.onload = function() {
-    console.log("[DiscourseMap] detector loaded");
-};
-document.head.appendChild(script);
+if (typeof chrome !== "undefined" && chrome.runtime && chrome.runtime.getURL) {
+    const script = document.createElement("script");
+    script.src = chrome.runtime.getURL("detector.js");
+    script.onload = function() {
+        console.log("[DiscourseMap] detector loaded");
+    };
+    script.onerror = function() {
+        console.log("[DiscourseMap] detector failed to load");
+    };
+    document.head.appendChild(script);
+}
 // Initialize detector
 const detector = new DiscoursePluginDetector();
 
@@ -934,30 +939,36 @@ if (document.readyState === 'loading') {
         setTimeout(() => {
             const results = detector.runDetection();
             // Send results to popup
-            chrome.runtime.sendMessage({
-                action: 'detectionResults',
-                results: results
-            });
+            if (typeof chrome !== "undefined" && chrome.runtime && chrome.runtime.sendMessage) {
+                chrome.runtime.sendMessage({
+                    action: 'detectionResults',
+                    results: results
+                });
+            }
         }, 1000); // Wait for dynamic content
     });
 } else {
     setTimeout(() => {
         const results = detector.runDetection();
         // Send results to popup
-        chrome.runtime.sendMessage({
-            action: 'detectionResults',
-            results: results
-        });
+        if (typeof chrome !== "undefined" && chrome.runtime && chrome.runtime.sendMessage) {
+            chrome.runtime.sendMessage({
+                action: 'detectionResults',
+                results: results
+            });
+        }
     }, 1000);
 }
 
 // Listen for manual detection requests
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if (request.action === 'runDetection') {
-        const results = detector.runDetection();
-        sendResponse(results);
-    }
-});
+if (typeof chrome !== "undefined" && chrome.runtime && chrome.runtime.onMessage) {
+    chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+        if (request.action === 'runDetection') {
+            const results = detector.runDetection();
+            sendResponse(results);
+        }
+    });
+}
 
 // Export for testing
 if (typeof module !== 'undefined' && module.exports) {
